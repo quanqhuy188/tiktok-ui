@@ -5,13 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleXmark,
   faSpinner,
-  faMagnifyingGlass,
   faEllipsisVertical,
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faUpload,
-  faMessage,
   faUser,
   faCoins,
   faGear,
@@ -25,6 +22,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import { MessageIcon, InboxIcon, UploadIcon, SearchIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -94,7 +93,6 @@ function Header() {
       separate: true,
     },
   ];
-
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -125,7 +123,7 @@ function Header() {
               <FontAwesomeIcon icon={faSpinner} />
             </div>
             <button className={cx('search-button')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -134,12 +132,17 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faUpload} />
+                  <UploadIcon />
                 </button>
               </Tippy>
               <Tippy delay={[0, 200]} content="Message" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faMessage} />
+                  <MessageIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -152,10 +155,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1660723200&x-signature=AqiE4PkwCa5NRBSzeRph4iC%2Ba8g%3D"
+              <Image
+                //src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1660723200&x-signature=AqiE4PkwCa5NRBSzeRph4iC%2Ba8g%3D"
                 className={cx('user-avt')}
                 alt="Nguyen B"
+                src="https://avatars.githubusercontent.com/u/46208564?s=40&v=4"
               />
             ) : (
               <button className={cx('more-btn')}>
