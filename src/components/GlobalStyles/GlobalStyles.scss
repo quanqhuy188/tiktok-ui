@@ -26,6 +26,7 @@ input,
 [tabindex] {
   border: none;
   outline: none;
+  cursor: pointer;
 }
 a[href] {
   color: var(--text-color);

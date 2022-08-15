@@ -14,11 +14,16 @@ function Button({
   large = false,
   outline = false,
   disabled = false,
+  leftIcon = false,
+  rightIcon = false,
+  className,
   children,
+  ...passProps
 }) {
   let Comp = 'button';
   const props = {
     onClick,
+    ...passProps,
   };
 
   // Remove Event when Disabled is true
@@ -45,11 +50,14 @@ function Button({
     large,
     text,
     disabled,
+    [className]: className,
   });
 
   return (
     <Comp className={classes} {...props}>
+      {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
       <span>{children}</span>
+      {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
     </Comp>
   );
 }
