@@ -2,10 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 :root {
   --primary: rgba(254, 44, 85, 1);
+  --black: #000;
+  --white: #fff;
+  --text-color: #333;
   //Default Layout
   --default-layout-header-width: 1150px;
   --default-layout-header-height: 60px;
-  --text-color: #333;
+  --default-layout-horizonal-spacer: 24px;
 }
 * {
   margin: 0;
