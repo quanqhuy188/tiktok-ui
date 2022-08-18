@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
   const [history, setHistory] = useState([{ data: items }]);
 
   const curr = history[history.length - 1];
@@ -41,6 +41,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       delay={[0, 700]}
       offset={[12, 15]}
       placement="bottom-end"
+      hideOnClick={hideOnClick}
       render={(attrs) => (
         <div className={cx('menu-items')} tabIndex="-1" {...attrs}>
           <PopperWrapper className={cx('menu-popper')}>
