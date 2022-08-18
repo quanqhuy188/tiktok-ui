@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import Image from '../Image';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 function AccountItem({ data }) {
@@ -20,5 +21,9 @@ function AccountItem({ data }) {
     </Link>
   );
 }
+
+AccountItem.propTypes = {
+  data: PropTypes.object,
+};
 
 export default AccountItem;
