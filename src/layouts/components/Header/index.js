@@ -20,7 +20,7 @@ import Image from '~/components/Image';
 import { MessageIcon, InboxIcon, UploadIcon } from '~/components/Icons';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -87,7 +87,7 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <Link to={routesConfig.root} className={cx('logo-link')}>
+          <Link to={config.routes.root} className={cx('logo-link')}>
             <img src={images.logo} alt="Tiktok" />
           </Link>
         </div>
