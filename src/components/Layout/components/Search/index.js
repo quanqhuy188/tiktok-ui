@@ -8,6 +8,7 @@ import { SearchIcon } from '~/components/Icons';
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDebounce } from '~/components/hooks';
+import * as searchService from '~/services/searchServices';
 
 const cx = classNames.bind(styles);
 
@@ -39,15 +40,27 @@ function Search() {
 
     setLoading(true);
 
-    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-      .then((res) => res.json())
-      .then((res) => {
-        setSearchResult(res.data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
-      });
+    const fetchApi = async () => {
+      setLoading(true);
+
+      const result = await searchService.search(debounced);
+
+      setSearchResult(result);
+
+      setLoading(false);
+    };
+
+    fetchApi();
+
+    // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     setSearchResult(res.data);
+    //     setLoading(false);
+    //   })
+    //   .catch(() => {
+    //     setLoading(false);
+    //   });
   }, [debounced]);
 
   return (
