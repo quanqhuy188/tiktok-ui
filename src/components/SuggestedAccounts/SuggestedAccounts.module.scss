@@ -78,7 +78,7 @@
   cursor: pointer;
 }
 
-.profile-container {
+.prof-container {
   position: relative;
   width: 320px;
   box-sizing: border-box;
@@ -86,4 +86,62 @@
   background: rgb(255, 255, 255);
   box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
   border-radius: 8px;
+}
+.prof-header {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.prof-link {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+.prof-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.prof-nickname {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  line-height: 22px;
+}
+.prof-name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+}
+.prof-info {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+.prof-likes,
+.prof-followers {
+  span {
+    margin-right: 12px;
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+  }
+  strong {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+  }
 }
