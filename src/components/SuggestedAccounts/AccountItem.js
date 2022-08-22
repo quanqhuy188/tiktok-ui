@@ -8,41 +8,14 @@ import Image from '~/components/Image';
 import Tippy from '@tippyjs/react/headless';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
+import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(styles);
 
 const AccountItem = ({}) => {
   const renderResult = (attrs) => (
     <div className={cx('prof-container')} tabIndex="-1" {...attrs}>
-      <div className={cx('prof-header')}>
-        <Link to={`/@hoaaa`} className={cx('prof-link')}>
-          <Image
-            className={cx('prof-avatar')}
-            src={
-              'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1660986000&x-signature=MD2ewayiHAcvaN3gWFpKLpUD6F8%3D'
-            }
-            alt={'quang huy'}
-          />
-        </Link>
-        <Button primary>Follow</Button>
-      </div>
-      <Link to={`/@hoaaa`} className={cx('prof-nickname')}>
-        <span>{'huydev188'}</span>
-        <FontAwesomeIcon className={cx('checkicon')} icon={faCheckCircle} />
-      </Link>
-      <Link to={`/@hoaaa`} className={cx('prof-name')}>
-        <span>{'Huy Nguyen'}</span>
-      </Link>
-      <div className={cx('prof-info')}>
-        <div className={cx('prof-followers')}>
-          <strong>200M</strong>
-          <span>Followers</span>
-        </div>
-        <div className={cx('prof-likes')}>
-          <strong>300M</strong>
-          <span>Likes</span>
-        </div>
-      </div>
+      <AccountPreview />
     </div>
   );
 
