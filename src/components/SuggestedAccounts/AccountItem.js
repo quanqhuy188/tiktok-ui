@@ -7,7 +7,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Image from '~/components/Image';
 import Tippy from '@tippyjs/react/headless';
 import { Link } from 'react-router-dom';
-import Button from '../Button';
+
 import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(styles);
